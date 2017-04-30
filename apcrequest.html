@@ -1,0 +1,41 @@
+<script type="text/x-red" data-template-name="apcrequest">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-tag"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="apcrequest">
+   <p>This node allows you to send request to an APC UPS Daemon Network Information Server (apcupsd NIS). Currently it supports the following commands:</p>
+   <ul>
+    <li>status</li>
+    <li>events</li>
+    <li>statusJson</li>
+   </ul>
+   Use one of the mentioned commands as payload of the input message. It will output a string with the result or in case of statusJson an Object containing the current status of the APC UPS.
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('apcrequest',{
+        category: 'function',
+        inputs:1,
+        outputs:1,
+        icon: 'apc.png',
+        color: '#E9967A',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type:"apcconfig", required: true}
+        },
+        label: function() {     // sets the default label contents
+            return this.name||"apcrequest";
+        },
+        labelStyle: function() { // sets the class to apply to the label
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

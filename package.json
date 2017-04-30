@@ -1,11 +1,29 @@
 {
   "name": "node-red-contrib-apcaccess",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Node-RED nodes to request status and events from an APC UPS Daemon NIS running on the network.",
   "author": "Jochen Scheib <mail@jochen-scheib.de> (http://www.jochen-scheib.de)",
-  "license": "MIT"
+  "keywords": [
+    "apcupsd",
+    "apcaccess",
+    "apc",
+    "ups",
+    "uninterruptible power supply",
+    "nis",
+    "node-red"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapero/node-red-contrib-apcaccess"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "apcaccess": "^1.0.1"
+  },
+  "node-red" : {
+    "nodes": {
+      "apcconfig": "apcconfig.js",
+      "apcrequest": "apcrequest.js"
+    }
+  }
 }

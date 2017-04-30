@@ -1,0 +1,36 @@
+<script type="text/x-red" data-template-name="apcconfig">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-tasks"></i> Host</label>
+        <input type="text" id="node-config-input-host" placeholder="127.0.0.1">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="fa fa-tasks"></i> Port</label>
+        <input type="text" id="node-config-input-port" placeholder="3551">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="apcconfig">
+  Configure the APC UPS Daemon NIS settings to connect to. You can either use an ip address or hostname combined with the port of the server (default: 3551).
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('apcconfig',{
+        category: 'config',
+        defaults: {
+            name: {value:""},
+            host: {value:"127.0.0.1", required: true},
+            port: {value:3551, required:true}
+        },
+        label: function() {     // sets the default label contents
+            return this.name||this.host||"apcconfig";
+        },
+        labelStyle: function() { // sets the class to apply to the label
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
