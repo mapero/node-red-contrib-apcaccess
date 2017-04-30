@@ -6,7 +6,7 @@
 
 Node-RED nodes to request status and events from an APC UPS Daemon NIS running on the network.
 
-[![Screenshot](https://raw.githubusercontent.com/mapero/node-red-contrib-apcaccess/master/doc/screen.png)]
+![Screenshot](https://raw.githubusercontent.com/mapero/node-red-contrib-apcaccess/master/doc/screen.png)
 
 ## Prerequisites
 
