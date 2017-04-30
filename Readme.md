@@ -1,8 +1,8 @@
 # Node-RED nodes for APC UPS Daemon
 
-[![npm version](https://badge.fury.io/js/apcaccess.svg)](https://badge.fury.io/js/node-red-contrib-apcaccess)
+[![npm version](https://badge.fury.io/js/node-red-contrib-apcaccess.svg)](https://badge.fury.io/js/node-red-contrib-apcaccess)
 
-[![NPM](https://nodei.co/npm/apcaccess.png)](https://nodei.co/npm/node-red-contrib-apcaccess/)
+[![NPM](https://nodei.co/npm/node-red-contrib-apcaccess.png)](https://nodei.co/npm/node-red-contrib-apcaccess/)
 
 Node-RED nodes to request status and events from an APC UPS Daemon NIS running on the network.
 
