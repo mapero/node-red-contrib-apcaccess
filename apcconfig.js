@@ -15,21 +15,29 @@ module.exports = function(RED) {
         node.client.connect(node.host, node.port)
           .then(function() {
             node.log('Connected to '+node.host+':'+node.port);
-            node.emit('status',{fill:"green",shape:"dot",text:"connected"});
           }).catch( function(err) {
             node.error(err);
-            node.emit('status',{fill:"red",shape:"ring",text:"error"});
           });
+
+        node.client.on('connect', () => {
+          node.emit('status',{fill:"green",shape:"dot",text:"online"});
+        });
+
+        node.client.on('disconnect', () => {
+          node.emit('status',{fill:"red",shape:"ring",text:"offline"});
+        });
+
+        node.client.on('error', (error) => {
+          node.error(error);
+        });
 
         this.on("close", function() {
           if(node.client.isConnected) {
             node.client.disconnect()
               .then(function() {
                 node.log('Disconnected from '+node.host+':'+node.port);
-                node.emit('status',{fill:"red",shape:"ring",text:"disconnected"});
               }).catch( function(err) {
                 node.error(err);
-                node.emit('status',{fill:"red",shape:"ring",text:"error"});
               });
           }
         });
